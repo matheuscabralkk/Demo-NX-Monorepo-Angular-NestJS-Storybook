@@ -5,7 +5,10 @@
   "scripts": {
     "ng": "nx",
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2020 browser module main",
-    "start": "nx serve",
+    "start": "concurrently \" nx serve \" \" nx serve api \"",
+    "start:web": "nx serve",
+    "start:api": "nx serve api",
+    "start:storybook": "nx run storybook",
     "build": "nx build",
     "test": "nx test"
   },
@@ -46,11 +49,18 @@
     "@nrwl/nest": "14.6.4",
     "@nrwl/node": "14.6.4",
     "@nrwl/nx-cloud": "latest",
+    "@nrwl/storybook": "^14.6.4",
     "@nrwl/workspace": "14.6.4",
+    "@storybook/addon-essentials": "~6.5.9",
+    "@storybook/angular": "~6.5.9",
+    "@storybook/builder-webpack5": "~6.5.9",
+    "@storybook/core-server": "~6.5.9",
+    "@storybook/manager-webpack5": "~6.5.9",
     "@types/jest": "28.1.1",
     "@types/node": "16.11.7",
     "@typescript-eslint/eslint-plugin": "~5.33.1",
     "@typescript-eslint/parser": "~5.33.1",
+    "concurrently": "^7.3.0",
     "cypress": "^10.2.0",
     "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",
@@ -62,6 +72,7 @@
     "prettier": "^2.6.2",
     "ts-jest": "28.0.5",
     "ts-node": "10.9.1",
-    "typescript": "~4.7.2"
+    "typescript": "~4.7.2",
+    "webpack": "^5.64.0"
   }
 }

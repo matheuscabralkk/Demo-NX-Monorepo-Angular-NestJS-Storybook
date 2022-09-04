@@ -22,7 +22,8 @@
           "build",
           "lint",
           "test",
-          "e2e"
+          "e2e",
+          "build-storybook"
         ],
         "accessToken": "NDNjZmU5OWYtYzhiMS00MmE2LWE5NjYtOWU4OGM1Y2M1ZTRlfHJlYWQtd3JpdGU="
       }
@@ -30,9 +31,7 @@
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ]
+      "dependsOn": ["^build"]
     }
   },
   "generators": {
